@@ -1,0 +1,43 @@
+{
+  "name": "cute-dynamo",
+  "version": "1.0.0",
+  "description": "A minimalistic DynamoDB client library with a cute API design",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "pack": "npm pack",
+    "prepublishOnly": "npm run pack"
+  },
+  "keywords": [
+    "dynamodb",
+    "aws",
+    "database",
+    "nosql",
+    "sdk",
+    "cute",
+    "minimalistic"
+  ],
+  "author": "PlanetRenox",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlanetRenox/cute-dynamo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PlanetRenox/cute-dynamo/issues"
+  },
+  "homepage": "https://github.com/PlanetRenox/cute-dynamo#readme",
+  "dependencies": {
+    "@aws-sdk/lib-dynamodb": "^3.0.0",
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/client-cognito-identity": "^3.0.0",
+    "@aws-sdk/credential-provider-cognito-identity": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+}
