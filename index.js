@@ -70,9 +70,9 @@ export async function init({
  * const item = await table('yourtablename').at({'yourPKkeyName': 'PKvalue', 'yourSKname': 1711900504}).get();
  */
 export const table = (tablename) => {
-    const tableObject = {
+    return {
         at: (PKorPKSK) => {
-            const atObject = {
+            return {
                 get: async () => {
                     const {GetCommand} = await import("@aws-sdk/lib-dynamodb");
                     const response = await client.send(new GetCommand({
@@ -85,15 +85,10 @@ export const table = (tablename) => {
                     const {PutCommand} = await import("@aws-sdk/lib-dynamodb");
                     return await client.send(new PutCommand({
                         TableName: tablename || (typeof process !== 'undefined' ? process.env.DYNAMODB_TABLE : undefined),
-                        Item: {
-                            ...PKorPKSK,
-                            JSON: JSON.stringify(data),
-                        },
+                        Item: {...PKorPKSK, JSON: JSON.stringify(data)},
                     }));
                 }
             };
-            return atObject;
         }
     };
-    return tableObject;
 };
