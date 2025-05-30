@@ -2,10 +2,10 @@
   "name": "cute-dynamo",
   "version": "0.1.0",
   "description": "A minimalistic DynamoDB client library with a cute API design",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "bundle": "npx esbuild index.js --bundle --outfile=dist/worker.js --platform=browser --target=es2022 --format=esm"
+    "bundle": "npx esbuild index.js --bundle --outfile=dist/index.js --platform=browser --target=es2022 --format=esm"
   },
   "author": "PlanetRenox",
   "license": "MIT",
