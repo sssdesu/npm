@@ -1,6 +1,6 @@
 {
   "name": "cute-dynamo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A minimalistic DynamoDB client library with a cute API design",
   "main": "index.js",
   "type": "module",
