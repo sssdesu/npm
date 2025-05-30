@@ -73,16 +73,6 @@ export const table = (tablename) => {
     const tableObject = {
         at: (PKorPKSK) => {
             const atObject = {
-                /**
-                 * Retrieves an item from the DynamoDB table using a primary key and an optional sort key.
-                 * The function deserializes the "JSON" attribute of the retrieved item back into a JavaScript object IF it's a serialized JSON.
-                 * The sort key can be a string or a number.
-                 *
-                 * @example
-                 * // Retrieve an item using both a primary key and a numeric sort key
-                 * const item = await table('yourtablename').at({'yourPKkeyName': 'PKvalue', 'yourSKname': 1711900504}).get();
-                 * console.log(item);
-                 */
                 get: async () => {
                     const {GetCommand} = await import("@aws-sdk/lib-dynamodb");
                     const response = await client.send(new GetCommand({
@@ -91,16 +81,6 @@ export const table = (tablename) => {
                     }));
                     return response.Item && response.Item.JSON ? JSON.parse(response.Item.JSON) : response.Item || null;
                 },
-
-                /**
-                 * Stores an item in the DynamoDB table with specified data, a primary key, and an optional sort key.
-                 * The data object is automatically serialized into a JSON string before storage.
-                 * The sort key can be a string or a number, providing additional sorting and query flexibility.
-                 *
-                 * @example
-                 * // Store an item with both a primary key and a numeric sort key
-                 * await table(process.env.DYNAMODB_TABLE).at({'dirPK': '/test/', 'unixSK': 2711900504}).put({'comments': ['comment1', 'comment2']});
-                 */
                 put: async (data) => {
                     const {PutCommand} = await import("@aws-sdk/lib-dynamodb");
                     return await client.send(new PutCommand({
