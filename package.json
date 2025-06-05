@@ -1,27 +1,15 @@
 {
-  "name": "cutedynamodb",
+  "name": "",
   "version": "0.1.0",
-  "description": "A minimalistic DynamoDB client library with a cute API design",
-  "main": "dist/index.js",
+  "description": "",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "bundle": "npx esbuild index.js --bundle --outfile=dist/index.js --platform=browser --target=es2022 --format=esm"
   },
   "author": "PlanetRenox",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PlanetRenox/cute-dynamo.git"
-  },
-  "bugs": {
-    "url": "https://github.com/PlanetRenox/cute-dynamo/issues"
-  },
-  "homepage": "https://github.com/PlanetRenox/cute-dynamo#readme",
+  "license": "",
   "dependencies": {
-    "@aws-sdk/lib-dynamodb": "^3.0.0",
-    "@aws-sdk/client-dynamodb": "^3.0.0",
-    "@aws-sdk/client-cognito-identity": "^3.0.0",
-    "@aws-sdk/credential-provider-cognito-identity": "^3.0.0"
   },
   "devDependencies": {
     "esbuild": "^0.20.0"
